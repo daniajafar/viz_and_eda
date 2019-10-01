@@ -12,6 +12,9 @@ library(tidyverse)
 library(ggridges)
 
 ```
+
+
+
 #create the weather data
 
 ```{r load_data, cache = TRUE}
@@ -58,6 +61,14 @@ weather_df %>%
   geom_smooth(se = FALSE)
 ```
 
+```
+2d density
+
+```{r}
+# install.packages("hexbin")
+weather_df %>% 
+  ggplot(aes(x = tmin, y = tmax)) +
+  geom_hex() 
 ```
 
 
